@@ -55,7 +55,8 @@ class Experiment:
         for epoch in range(self.train_conf.get('epochs')):
             logging.info('Start training epoch: %d' % (epoch + 1))
             start_time = time.time()
-            epoch_loss = self.train_func(train_loader, self.model, self.optimizer, self.device, epoch)
+            epoch_loss = self.train_func(train_loader, self.model, self.optimizer, self.device)
+            # epoch
             end_time = time.time()
             mean_loss = np.mean(epoch_loss)
             print('[Epoch #%d] training loss: %f - training time: %.2f seconds' % (epoch + 1, mean_loss, end_time - start_time))

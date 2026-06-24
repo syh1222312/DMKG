@@ -174,7 +174,7 @@ class ConvD(BaseModel):
         y = torch.sigmoid(x)
         return self.loss(y, batch_t), y
 
-    # ==================== 修改后完整方法：可学习原型聚类 + 标准 InfoNCE（已调优） ====================
+
     def compute_gcl_and_cluster_loss(self, batch_h, batch_t, epoch=None):
         """
         epoch 参数用于 warmup（前 5 个 epoch 不计算辅助损失）
